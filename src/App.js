@@ -8,7 +8,7 @@ function App() {
   const [questions, setQuestions] = useState([
     {
       id: 1,
-      question: "what is the capital of france?",
+      question: "What is the capital of France?",
       options: [
         { answer: "London", correct: false },
         { answer: "Paris", correct: true },
@@ -18,7 +18,7 @@ function App() {
     },
     {
       id: 2,
-      question: "what is the capital of Japan?",
+      question: "What is the capital of Japan?",
       options: [
         { answer: "Tokyo", correct: true },
         { answer: "Osaka", correct: false },
@@ -28,7 +28,7 @@ function App() {
     },
     {
       id: 3,
-      question: "what is the capital of Kenya?",
+      question: "What is the capital of Kenya?",
       options: [
         { answer: "Lagos", correct: false },
         { answer: "Cape Town", correct: false },
@@ -38,7 +38,7 @@ function App() {
     },
     {
       id: 4,
-      question: "what is the capital of Australia?",
+      question: "What is the capital of Australia?",
       options: [
         { answer: "Sydney", correct: false },
         { answer: "Melbourne", correct: false },
@@ -66,8 +66,10 @@ function App() {
     <div className="container">
       <Header />
       <Question questions={questions} pageId={pageId} />
-      <NavButton name="next" pageId={pageId} nextPage={nextPage} />
-      <NavButton name="back" pageId={pageId} prevPage={prevPage} />
+      <div className="nav-buttons">
+        <NavButton name="back" pageId={pageId} prevPage={prevPage} />
+        <NavButton name="next" pageId={pageId} nextPage={nextPage} />
+      </div>
     </div>
   );
 }

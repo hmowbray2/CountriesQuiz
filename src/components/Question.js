@@ -27,68 +27,72 @@ const Question = ({ questions, pageId }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (selectedOption === correctAnswer) {
-      setResult(`${selectedOption} is correct!`);
+      setResult(selectedOption && `${selectedOption} is correct!`);
     } else {
-      setResult(`${selectedOption} is incorrect :(`);
+      setResult(selectedOption && `${selectedOption} is incorrect :(`);
     }
   };
 
   return (
     <div>
-      <p>Question {pageId + 1}</p>
+      <h3 className="question-no">Question {pageId + 1}</h3>
 
-      <p>{questions[pageId].question}</p>
+      <h4 className="question">{questions[pageId].question}</h4>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            <input
-              type="radio"
-              name="group"
-              value={questions[pageId].options[0].answer}
-              checked={selectedOption === questions[pageId].options[0].answer}
-              onChange={handleOptionChange}
-            />
-            {questions[pageId].options[0].answer}
-          </label>
+        <div className="radio-btns">
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="group"
+                value={questions[pageId].options[0].answer}
+                checked={selectedOption === questions[pageId].options[0].answer}
+                onChange={handleOptionChange}
+              />
+              {questions[pageId].options[0].answer}
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="group"
+                value={questions[pageId].options[1].answer}
+                checked={selectedOption === questions[pageId].options[1].answer}
+                onChange={handleOptionChange}
+              />
+              {questions[pageId].options[1].answer}
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="group"
+                value={questions[pageId].options[2].answer}
+                checked={selectedOption === questions[pageId].options[2].answer}
+                onChange={handleOptionChange}
+              />
+              {questions[pageId].options[2].answer}
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="group"
+                value={questions[pageId].options[3].answer}
+                checked={selectedOption === questions[pageId].options[3].answer}
+                onChange={handleOptionChange}
+              />
+              {questions[pageId].options[3].answer}
+            </label>
+          </div>
         </div>
         <div>
-          <label>
-            <input
-              type="radio"
-              name="group"
-              value={questions[pageId].options[1].answer}
-              checked={selectedOption === questions[pageId].options[1].answer}
-              onChange={handleOptionChange}
-            />
-            {questions[pageId].options[1].answer}
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              name="group"
-              value={questions[pageId].options[2].answer}
-              checked={selectedOption === questions[pageId].options[2].answer}
-              onChange={handleOptionChange}
-            />
-            {questions[pageId].options[2].answer}
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              name="group"
-              value={questions[pageId].options[3].answer}
-              checked={selectedOption === questions[pageId].options[3].answer}
-              onChange={handleOptionChange}
-            />
-            {questions[pageId].options[3].answer}
-          </label>
-        </div>
-        <div>
-          <button type="submit">Submit</button>
+          <button className="btn" type="submit">
+            Submit
+          </button>
         </div>
       </form>
       <p>{result}</p>

@@ -5,6 +5,7 @@ const NavButton = ({ name, nextPage, prevPage, pageId }) => {
     <div>
       {name === "next" ? (
         <button
+          className="btn"
           onClick={() => {
             nextPage(pageId);
             console.log("after click " + pageId);
@@ -14,6 +15,7 @@ const NavButton = ({ name, nextPage, prevPage, pageId }) => {
         </button>
       ) : (
         <button
+          className="btn"
           onClick={() => {
             prevPage(pageId);
             console.log("after click " + pageId);
