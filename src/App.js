@@ -1,5 +1,5 @@
 import "./App.css";
-import react, { useState } from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import NavButton from "./components/NavButton";
 import Question from "./components/Question";
